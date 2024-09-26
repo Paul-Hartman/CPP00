@@ -1,12 +1,11 @@
-NAME := ex00
+NAME := megaphone
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std =c++98
-SRCDIR = src
+CFLAGS := -Wall -Wextra -Werror -std=c++98
 OBJDIR = objs
-SRCS = 
-OBJS := $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+SRCS = megaphone.cpp
+OBJS := $(OBJDIR)/$(SRCS:.cpp=.o)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+$(OBJDIR)/%.o: %.cpp
 	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -16,7 +15,7 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS)/*.o
 
 fclean: clean
 	rm -f $(NAME)
@@ -24,3 +23,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
