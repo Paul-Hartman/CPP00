@@ -2,7 +2,7 @@ NAME := phonebook
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98
 OBJDIR = objs
-SRCS = main.cpp
+SRCS = main.cpp phonebook.cpp contact.cpp
 OBJS := $(OBJDIR)/$(SRCS:.cpp=.o)
 
 $(OBJDIR)/%.o: %.cpp

@@ -4,6 +4,7 @@
 
 
 #include <iostream>
+#include "contact.hpp"
 
 class PhoneBook {
 	public: 
@@ -14,8 +15,9 @@ class PhoneBook {
 		void search();
 
 	private:
-		Contact contacts[7];
+		Contact m_contacts[7];
+		int m_contactCount;
 		
-}
+};
 
 #endif

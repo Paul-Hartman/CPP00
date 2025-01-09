@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
 {
 	(void)argc;
 	(void)argv;
-	PhoneBook* phoneBook = new PhoneBook();
+	PhoneBook phoneBook = PhoneBook();
 	while (1)
 	{
 		std::string input;
