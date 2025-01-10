@@ -21,7 +21,7 @@ std::string Contact::getLastName()
 	return m_lastName;
 }
 
-std::string Contact::getnickname()
+std::string Contact::getNickname()
 {
 	return m_nickname;
 }
