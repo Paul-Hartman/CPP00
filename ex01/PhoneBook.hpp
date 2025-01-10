@@ -4,7 +4,7 @@
 
 
 #include <iostream>
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class PhoneBook {
 	public: 
@@ -12,13 +12,16 @@ class PhoneBook {
 		~PhoneBook();
 
 		void addContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
-		void search();
+		//void search();
 
 		void printContacts();
 
 	private:
-		Contact m_contacts[7];
+
+		void printColumn(std::string str);
+		Contact m_contacts[8];
 		int m_contactCount;
+		int m_index;
 		
 };
 
