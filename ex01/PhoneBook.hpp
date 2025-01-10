@@ -1,7 +1,4 @@
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
-
+#pragma once
 
 #include <iostream>
 #include "Contact.hpp"
@@ -22,5 +19,3 @@ class PhoneBook {
 		int m_index;
 		
 };
-
-#endif
