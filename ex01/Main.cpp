@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib> 
 #include "PhoneBook.hpp"
 
 std::string trimWhitespace(std::string &str)
@@ -76,8 +77,14 @@ int main(int argc, char const *argv[])
 			break;
 		else if(input == "ADD")
 			addContact(phoneBook);
-		// else if(input == "SEARCH")
-		// 	//phoneBook.search();
+		else if(input == "SEARCH")
+		{
+			phoneBook.printContacts();
+			std::cout << "Choose the index of desired Contact" << std::endl;
+			std::getline(std::cin, input);
+			std::cout << std::endl;
+			phoneBook.displayContact(std::atoi(input.c_str()));
+		}
 		else
 			std::cout << "Invalid command" << std::endl;
 	}

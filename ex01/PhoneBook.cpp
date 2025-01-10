@@ -32,15 +32,26 @@ void PhoneBook::printContacts()
 		printColumn(m_contacts[i].getLastName());
 		printColumn(m_contacts[i].getNickname());
 		std::cout << std::endl;
-		// std::cout << m_contacts[i].getFirstName() << std::endl;
-		// std::cout << m_contacts[i].getLastName() << std::endl;
-		// std::cout << m_contacts[i].getNickname() << std::endl;
-		// std::cout << m_contacts[i].getPhoneNumber() << std::endl;
-		// std::cout << m_contacts[i].getFirstName() << std::endl;
-		// std::cout << m_contacts[i].getSecret() << std::endl;
-		// std::cout << std::endl;
 	}
 }
+
+void PhoneBook::displayContact(int index)
+{
+	if(index < 0 || index >= m_contactCount)
+	{
+		std::cout << "Invalid index\n" << std::endl;
+		return;
+	}
+	std::cout << m_contacts[index].getFirstName() << std::endl;
+	std::cout << m_contacts[index].getLastName() << std::endl;
+	std::cout << m_contacts[index].getNickname() << std::endl;
+	std::cout << m_contacts[index].getPhoneNumber() << std::endl;
+	std::cout << m_contacts[index].getFirstName() << std::endl;
+	std::cout << m_contacts[index].getSecret() << std::endl;
+	std::cout << std::endl;
+}
+	
+
 
 void PhoneBook::addContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
@@ -49,5 +60,4 @@ void PhoneBook::addContact(std::string first_name, std::string last_name, std::s
 	if(m_contactCount < 8)
 		m_contactCount++;
 	std::cout << "Contact added successfully\n" << std::endl;
-	printContacts();
 }
