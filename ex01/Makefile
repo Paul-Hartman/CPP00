@@ -3,10 +3,12 @@ CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98
 OBJDIR = objs
 SRCS = Main.cpp PhoneBook.cpp Contact.cpp
-OBJS := $(OBJDIR)/$(SRCS:.cpp=.o)
+OBJS := $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 
-$(OBJDIR)/%.o: %.cpp
+$(OBJDIR):
 	mkdir -p $(OBJDIR)
+
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
@@ -15,7 +17,8 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)/*.o
+	rm -f $(OBJS)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)
