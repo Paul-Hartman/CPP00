@@ -2,8 +2,8 @@
 
 PhoneBook::PhoneBook()
 {
-	m_contactCount = 0;
-	m_index = 0;
+	_contactCount = 0;
+	_index = 0;
 }
 
 PhoneBook::~PhoneBook() {}
@@ -24,30 +24,30 @@ void PhoneBook::printColumn(std::string str)
 
 void PhoneBook::printContacts()
 {
-	for(int i = 0; i < m_contactCount; i++)
+	for(int i = 0; i < _contactCount; i++)
 	{
 		
 		std::cout << "|         " << i << "|";
-		printColumn(m_contacts[i].getFirstName());
-		printColumn(m_contacts[i].getLastName());
-		printColumn(m_contacts[i].getNickname());
+		printColumn(_contacts[i].getFirstName());
+		printColumn(_contacts[i].getLastName());
+		printColumn(_contacts[i].getNickname());
 		std::cout << std::endl;
 	}
 }
 
 void PhoneBook::displayContact(int index)
 {
-	if(index < 0 || index >= m_contactCount)
+	if(index < 0 || index >= _contactCount)
 	{
 		std::cout << "Invalid index\n" << std::endl;
 		return;
 	}
-	std::cout << m_contacts[index].getFirstName() << std::endl;
-	std::cout << m_contacts[index].getLastName() << std::endl;
-	std::cout << m_contacts[index].getNickname() << std::endl;
-	std::cout << m_contacts[index].getPhoneNumber() << std::endl;
-	std::cout << m_contacts[index].getFirstName() << std::endl;
-	std::cout << m_contacts[index].getSecret() << std::endl;
+	std::cout << _contacts[index].getFirstName() << std::endl;
+	std::cout << _contacts[index].getLastName() << std::endl;
+	std::cout << _contacts[index].getNickname() << std::endl;
+	std::cout << _contacts[index].getPhoneNumber() << std::endl;
+	std::cout << _contacts[index].getFirstName() << std::endl;
+	std::cout << _contacts[index].getSecret() << std::endl;
 	std::cout << std::endl;
 }
 	
@@ -55,9 +55,9 @@ void PhoneBook::displayContact(int index)
 
 void PhoneBook::addContact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
-	m_contacts[m_index] = Contact(first_name, last_name, nickname, phone_number, darkest_secret);
-	m_index = (m_index + 1) % 8;
-	if(m_contactCount < 8)
-		m_contactCount++;
+	_contacts[_index] = Contact(first_name, last_name, nickname, phone_number, darkest_secret);
+	_index = (_index + 1) % 8;
+	if(_contactCount < 8)
+		_contactCount++;
 	std::cout << "Contact added successfully\n" << std::endl;
 }

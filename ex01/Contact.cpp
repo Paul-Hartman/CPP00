@@ -4,36 +4,36 @@ Contact::Contact() {}
 
 Contact::Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
-	m_firstName = first_name;
-	m_lastName = last_name;
-	m_nickname = nickname;
-	m_phoneNumber = phone_number;
-	m_darkestSecret = darkest_secret;
+	_firstName = first_name;
+	_lastName = last_name;
+	_nickname = nickname;
+	_phoneNumber = phone_number;
+	_darkestSecret = darkest_secret;
 }
 
 std::string Contact::getFirstName()
 {
-	return m_firstName;
+	return _firstName;
 }
 
 std::string Contact::getLastName()
 {
-	return m_lastName;
+	return _lastName;
 }
 
 std::string Contact::getNickname()
 {
-	return m_nickname;
+	return _nickname;
 }
 
 std::string Contact::getPhoneNumber()
 {
-	return m_phoneNumber;
+	return _phoneNumber;
 }
 
 std::string Contact::getSecret()
 {
-	return m_darkestSecret;
+	return _darkestSecret;
 }
 
 Contact::~Contact() {}

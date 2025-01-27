@@ -14,8 +14,8 @@ class PhoneBook {
 
 	private:
 		void printColumn(std::string str);
-		Contact m_contacts[8];
-		int m_contactCount;
-		int m_index;
+		Contact _contacts[8];
+		int _contactCount;
+		int _index;
 		
 };
