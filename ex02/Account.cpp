@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:27:13 by phartman          #+#    #+#             */
-/*   Updated: 2025/02/10 14:27:14 by phartman         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:13:13 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <ctime>
 #include <iostream>
 #include <iomanip>
-
-
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
