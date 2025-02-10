@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:26:51 by phartman          #+#    #+#             */
-/*   Updated: 2025/02/10 14:26:52 by phartman         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:33:09 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 Contact::Contact() {}
 
 Contact::Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
-{
-	_firstName = first_name;
-	_lastName = last_name;
-	_nickname = nickname;
-	_phoneNumber = phone_number;
-	_darkestSecret = darkest_secret;
+: _firstName(first_name), _lastName(last_name), _nickname(nickname), _phoneNumber(phone_number), _darkestSecret(darkest_secret){
 }
+
+Contact::~Contact() {}
 
 std::string Contact::getFirstName()
 {
@@ -48,4 +45,3 @@ std::string Contact::getSecret()
 	return _darkestSecret;
 }
 
-Contact::~Contact() {}

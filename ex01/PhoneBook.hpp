@@ -6,13 +6,15 @@
 /*   By: phartman <phartman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:27:09 by phartman          #+#    #+#             */
-/*   Updated: 2025/02/10 14:27:10 by phartman         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:08:01 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#ifndef __PHONEBOOK_H__
+#define __PHONEBOOK_H__
 #include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook {
@@ -31,3 +33,5 @@ class PhoneBook {
 		int _index;
 		
 };
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:27:05 by phartman          #+#    #+#             */
-/*   Updated: 2025/02/10 14:27:05 by phartman         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:43:01 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,10 @@ PhoneBook::~PhoneBook() {}
 
 void PhoneBook::printColumn(std::string str)
 {
-	int len = str.length();
-	if(len > 10)
+	if(str.length() > 10)
 		std::cout << str.substr(0, 9) << ".";
 	else
-	{
-		for(int i = len; i < 10; i++)
-			std::cout << " ";
-		std::cout << str;
-	}
+		std::cout << std::setw(10) << str;
 	std::cout << "|";
 }
 
@@ -38,8 +33,7 @@ void PhoneBook::printContacts()
 {
 	for(int i = 0; i < _contactCount; i++)
 	{
-		
-		std::cout << "|         " << i << "|";
+		std::cout << "|" << std::setw(10) << i << "|";
 		printColumn(_contacts[i].getFirstName());
 		printColumn(_contacts[i].getLastName());
 		printColumn(_contacts[i].getNickname());
@@ -58,7 +52,6 @@ void PhoneBook::displayContact(int index)
 	std::cout << _contacts[index].getLastName() << std::endl;
 	std::cout << _contacts[index].getNickname() << std::endl;
 	std::cout << _contacts[index].getPhoneNumber() << std::endl;
-	std::cout << _contacts[index].getFirstName() << std::endl;
 	std::cout << _contacts[index].getSecret() << std::endl;
 	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:26:57 by phartman          #+#    #+#             */
-/*   Updated: 2025/02/10 14:26:58 by phartman         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:36:11 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int main(int argc, char const *argv[])
 {
 	(void)argc;
 	(void)argv;
+	int index;
 	PhoneBook phoneBook = PhoneBook();
 	while (1)
 	{
@@ -95,7 +96,11 @@ int main(int argc, char const *argv[])
 			std::cout << "Choose the index of desired Contact" << std::endl;
 			std::getline(std::cin, input);
 			std::cout << std::endl;
-			phoneBook.displayContact(std::atoi(input.c_str()));
+			index = atoi(input.c_str());
+			if(index == 0 && input != "0")
+				std::cout << "Invalid index" << std::endl;
+			else
+				phoneBook.displayContact(index);
 		}
 		else
 			std::cout << "Invalid command" << std::endl;

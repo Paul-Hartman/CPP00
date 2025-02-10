@@ -6,12 +6,13 @@
 /*   By: phartman <phartman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:26:54 by phartman          #+#    #+#             */
-/*   Updated: 2025/02/10 14:26:55 by phartman         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:32:11 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#ifndef __CONTACT_H__
+#define __CONTACT_H__
 #include <iostream>
 
 class Contact {
@@ -32,3 +33,5 @@ class Contact {
 		std::string _phoneNumber;
 		std::string _darkestSecret;
 };
+
+#endif
