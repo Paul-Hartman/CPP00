@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:26:57 by phartman          #+#    #+#             */
-/*   Updated: 2025/02/10 16:36:11 by phartman         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:59:31 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,31 +45,31 @@ void addContact(PhoneBook &phoneBook)
 	while (firstName.empty())
 	{
 		std::cout << "Please enter First Name:" << std::endl;
-		std::getline(std::cin, firstName);
+		if(!std::getline(std::cin, firstName)) exit(1);
 		trimWhitespace(firstName);
 	}
 	while (lastName.empty())
 	{
 		std::cout << "Please enter Last Name:" << std::endl;
-		std::getline(std::cin, lastName);
+		if(!std::getline(std::cin, lastName)) exit(1);
 		trimWhitespace(lastName);
 	}
 	while (nickname.empty())
 	{
 		std::cout << "Please enter nickname:" << std::endl;
-		std::getline(std::cin, nickname);
+		if(!std::getline(std::cin, nickname)) exit(1);
 		trimWhitespace(nickname);
 	}
 	while(phoneNumber.empty())
 	{
 		std::cout << "Please enter Phone Number:" << std::endl;
-		std::getline(std::cin, phoneNumber);
+		if(!std::getline(std::cin, phoneNumber)) exit(1);
 		trimWhitespace(phoneNumber);
 	}
 	while (darkestSecret.empty())
 	{
 		std::cout << "Please enter Darkest Secret:" << std::endl;
-		std::getline(std::cin, darkestSecret);
+		if(!std::getline(std::cin, darkestSecret)) exit(1);
 		trimWhitespace(darkestSecret);
 	}
 	phoneBook.addContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
@@ -85,7 +85,7 @@ int main(int argc, char const *argv[])
 	{
 		std::string input;
 		std::cout << "Enter a command(ADD, SEARCH or EXIT): " << std::endl;
-		std::getline(std::cin, input);
+		if(!std::getline(std::cin, input)) return 1;
 		if(input == "EXIT")
 			break;
 		else if(input == "ADD")
@@ -94,7 +94,7 @@ int main(int argc, char const *argv[])
 		{
 			phoneBook.printContacts();
 			std::cout << "Choose the index of desired Contact" << std::endl;
-			std::getline(std::cin, input);
+			if(!std::getline(std::cin, input)) return 1;
 			std::cout << std::endl;
 			index = atoi(input.c_str());
 			if(index == 0 && input != "0")
