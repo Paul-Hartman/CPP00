@@ -1,17 +1,17 @@
 
 #include <iostream>
+#include <string>
 
 int main(int argc, char const *argv[])
 {
 	if(argc > 1)
 	{
+		std::string str;
 		for(int i = 1; i < argc; i++)
-		{
-			for(int j = 0; argv[i][j]; j++)
-			{
-				std::cout << (char)toupper(argv[i][j]);
-			}
-		}
+			str += argv[i];
+		for (size_t i = 0; i < str.length(); i++)
+			str[i] = std::toupper(str[i]);
+		std::cout << str;
 	}
 	else
 	{
